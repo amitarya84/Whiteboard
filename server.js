@@ -9,7 +9,7 @@ const io = new Server(server);
 
 require('dotenv').config()
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 const Boards = require('./models/Boards');
 
@@ -115,7 +115,6 @@ io.on('connection', (socket) => {
     })
 });
 
-
 //Connect to database
 try {
     mongoose.connect(process.env.MONGO_URI)
@@ -124,5 +123,5 @@ try {
 }
 
 server.listen(PORT, () => {
-    console.log('Server running on port 5000')
+    console.log('Server running on port '+ PORT)
 })

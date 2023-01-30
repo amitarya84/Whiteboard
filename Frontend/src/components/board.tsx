@@ -27,7 +27,7 @@ export default function Board({ setClearBoard }: propType) {
 
     const boardRef = useRef<HTMLDivElement>(null);
     const [drawingShape, setDrawingShape] = useState(SHAPES.LINE);
-    const [shapes, setShapes] = useState<shapeType[]>([]);
+    const [shapes, setShapes] = useState<shapeType[]>(ctx?.whiteBoard?.shapes);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [pressed, setPressed] = useState(false);
     const [users, setUsers] = useState([]);

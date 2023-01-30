@@ -3,6 +3,7 @@ import { BoardContext, providerValueType } from "../Context/boardContext"
 import { boardType } from "../Context/boardContext"
 import { SocketContext } from "../Context/socketProvider";
 import { io } from "socket.io-client";
+import styles from './boardCard.module.css';
 
 interface propType { 
     board: boardType,
@@ -16,6 +17,7 @@ export default function BoardCard({ board, setPage }: propType) {
 
     const boardCardClick = () => {
         setPage('BoardPage')
+        console.log(board)
         ctx?.setWhiteBoard(board);
         
         let roomId = board._id;
@@ -37,7 +39,7 @@ export default function BoardCard({ board, setPage }: propType) {
         }
     }
 
-    return <div>
+    return <div className={styles.boardCard}>
         <h2 style={{marginTop: '20px', cursor: 'pointer'}} onClick={boardCardClick}>
             {board.name}
         </h2>
