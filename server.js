@@ -8,12 +8,17 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 require('dotenv').config()
+
+const PORT = process.env.PORT || 5000;
+
 const Boards = require('./models/Boards');
 
 app.use(cors({
     'Access-Control-Allow-Origin': '*'
 }))
 app.use(express.json());
+
+app.use(express.static('Frontend/dist'))
 
 app.get('/whitebaords', async (req, res) => {
     // console.log(req)
@@ -120,6 +125,6 @@ try {
     console.log(err)
 }
 
-server.listen('4000', () => {
+server.listen(PORT, () => {
     console.log('Server running on port 5000')
 })

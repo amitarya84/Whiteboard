@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "prestart": "cd ./Frontend && npm install && npm run build",
+    "start": "node server.js ",
     "dev": "nodemon server.js"
   },
   "keywords": [],
