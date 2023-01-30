@@ -38,14 +38,14 @@ export default function ({ setShapes, drawingShape, setDrawingShape, updateBoard
 
     return (
         <div>
-            <button style={drawingShape === SHAPES.SELECT ? { 'border': '2px solid #747bff' } : {}}
-                onClick={e => setDrawingShape(SHAPES.SELECT)}>Select</button>
+            {/* <button style={drawingShape === SHAPES.SELECT ? { 'border': '2px solid #747bff' } : {}}
+                onClick={e => setDrawingShape(SHAPES.SELECT)}>Select</button> */}
 
             <button style={drawingShape === SHAPES.LINE ? { 'border': '2px solid #747bff' } : {}}
                 onClick={e => setDrawingShape(SHAPES.LINE)}>Line</button>
 
-            <button style={drawingShape === SHAPES.TEXT ? { 'border': '2px solid #747bff' } : {}}
-                onClick={e => setDrawingShape(SHAPES.TEXT)}>Text</button>
+            {/* <button style={drawingShape === SHAPES.TEXT ? { 'border': '2px solid #747bff' } : {}}
+                onClick={e => setDrawingShape(SHAPES.TEXT)}>Text</button> */}
 
             <button style={drawingShape === SHAPES.CIRCLE ? { 'border': '2px solid #747bff' } : {}}
                 onClick={e => setDrawingShape(SHAPES.CIRCLE)}>Ellipse</button>

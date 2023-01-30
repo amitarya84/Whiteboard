@@ -21,11 +21,9 @@ app.use(express.json());
 app.use(express.static('Frontend/dist'))
 
 app.get('/whitebaords', async (req, res) => {
-    // console.log(req)
 
     try {
         const boards = await Boards.find();
-        // console.log(boards)
         res.json(boards)
     } catch (error) {
         console.log(error)
@@ -33,12 +31,12 @@ app.get('/whitebaords', async (req, res) => {
     }
 })
 app.get('/whitebaord/:id', async (req, res) => {
-    console.log('single_board', req.params)
+    // console.log('single_board', req.params)
     let id = req.params.id;
 
     try {
         const board = await Boards.findById(id);
-        console.log(board)
+        // console.log(board)
         res.json(board)
     } catch (error) {
         console.log(error)
@@ -68,7 +66,7 @@ app.patch('/whitebaord', async (req, res) => {
 })
 
 app.post('/createWhiteboard', async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     let boardName = req.body.boardName;
 
     if (boardName) {
@@ -77,7 +75,7 @@ app.post('/createWhiteboard', async (req, res) => {
                 name: boardName,
                 shapes: []
             });
-            console.log('Added to database..', savedBoard)
+            // console.log('Added to database..', savedBoard)
             res.json(savedBoard)
             // const savedBoard = await board.save();
         } catch (err) {
@@ -101,7 +99,7 @@ io.on('connection', (socket) => {
 
     socket.on('board_updated', ({ roomId, userId }) => {
         // console.log('scoket', socket)
-        console.log('boardUpdateEmit', userId)
+        // console.log('boardUpdateEmit', userId)
         console.log(BoardUsers)
         socket.broadcast.to(roomId).emit('board_updated', { userId, BoardUsers })
         // socket.broadcast.emit('board_updated', {userId})

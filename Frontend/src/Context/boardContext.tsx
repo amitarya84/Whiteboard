@@ -30,7 +30,8 @@ export interface providerValueType {
 const BoardProvider = (props: PropsWithChildren) => {
     const [whiteBoardList, setWhiteBoardList] = useState<boardType[] | null>(null);
     const [whiteBoard, setWhiteBoard] = useState<boardType | null>(null);
-    const [serverUrl, setServerUrl] = useState('http://localhost:4000/');
+    // const [serverUrl, setServerUrl] = useState('http://localhost:4000/');
+    const [serverUrl, setServerUrl] = useState('/');
 
     const socketCtx = useContext(SocketContext);
 
